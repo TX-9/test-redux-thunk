@@ -1,12 +1,14 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { uiActions } from '../../store/ui-slice';
 import classes from './CartButton.module.css';
 
 const CartButton = (props) => {
   const dispatch = useDispatch();
-  const cartQuantity = useSelector(state => state.cart.totalQuantity);
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+
   const toggleCartHandler = () => {
-    dispatch(uiActions.toggle()); //Action object will be auto generated and be returned
+    dispatch(uiActions.toggle());
   };
 
   return (
