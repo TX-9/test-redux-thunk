@@ -37,8 +37,11 @@ export const fetchCartData = () => {
   };
 };
 
+// Action Creator Thunk
+// Pattern. A function will not create action but another funciton will do
+// => sendCartData won't but async (dispatch) => {} will
 export const sendCartData = (cart) => {
-  return async (dispatch) => {
+  return async (dispatch) => { // Redux toolkit exeute this function
     dispatch(
       uiActions.showNotification({
         status: 'pending',

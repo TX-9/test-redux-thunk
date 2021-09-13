@@ -26,7 +26,8 @@ function App() {
     }
 
     if (cart.changed) {
-      dispatch(sendCartData(cart));
+      //c.f. dispatch(cartActions.removeItemFromCart(id));
+      dispatch(sendCartData(cart)); // use custom Action creator
     }
   }, [cart, dispatch]);
 
